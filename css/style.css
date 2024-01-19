@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.gridlayout{
+width: 80%;
+margin: auto;    
+}
+#maindesine{
+    background-image: url(/asserts/images/remot.avif);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+
+
+}
+#inputtype{
+    cursor: pointer;
+    padding: 18px;
+    border-radius: 3px;
+    border: none;
+    width: 24%;
+
+   
+}
+.fav-logo{
+    width: 100%;
+}
+.inputstl{
+    margin-top: 30px;
+
+}
+.btn  {
+    padding: 12px 25px;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-size: 17px;
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+}
+.txtstyle{
+font-size: 80px;
+font-weight: 1000;
+padding-top: 150px;
+color:red; 
+font-family: 'Poppins', sans-serif;   
+}
+.txtstyle span{
+color: white;
+}
+.pstyle{
+ margin-top: 10px;
+ font-size: 40px;
+ color: white;
+ font-weight: 500;
+
+}
+.maindesine1{
+    text-align: center;
+}
+.maindiv{
+display: flex;
+justify-content: space-between; 
+padding-top: 30px;   
+}
+.subdivone img{
+padding-left: 100px;    
+}
+.sundivtwo{
+padding-right: 100px;    
+}
+.sundivtwo button{
+padding: 10px 25px;
+background-color: red;
+color: white;
+border-radius: 6px;
+border: none;
+font-size: 17px;
+font-weight: 100;
+font-family: 'Poppins', sans-serif; 
+
+
+}
+
+
+
+
+
+
+#data{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 300px;
+}
+
+.subdivs{
+    width: 20%;
+}
+#startyear{
+    padding: 12px 20px 12px 20px;
+    background-color: white;
+    color:red;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 26px;   
+}
+#endyear{
+    padding: 12px 20px 12px 20px;
+    background-color: white;
+    color:red;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 26px;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ipade responsive */
+
+@media (min-width:700px)and (max-width:850px){
+
+    .subdivone img {
+       
+        width: 20%;
+    }
+    .txtstyle {
+        font-size: 85px;
+        margin-bottom: 80px;
+    }
+    .inputstl {
+        margin-top: 65px;
+    }
+    #inputtype {
+        padding: 20px;
+        width: 35%;
+    }
+   
+    .navebar{
+        padding-top: 10px;
+
+    }
+    .btn {
+        margin-left: 10px;
+        padding: 10px 20px 10px 20px;
+        font-size: 19px;
+    }
+    .subdivs {
+        width: 22%;
+        margin-top: 200px;
+    }
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile phone responsive */
+
+@media screen and (max-width:600px){
+    .txtstyle {
+        font-size: 50px;
+    }
+    .subdivone img {
+        padding-left: 16px;
+        width: 35%;
+    }
+    .sundivtwo {
+        padding-right: 16px;
+    }
+    .txtstyle {
+        font-size: 40px;
+        padding-top: 130px;
+    }
+    .pstyle {
+        margin-top: 32px;
+        font-size: 16px;
+        color: white;
+        font-weight: 500;
+        width: 100%;
+    }
+    #inputtype {
+        padding: 15px;
+        width: 40%;
+    }
+   
+    .subdivs {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .btn {
+        padding: 13px 30px 13px 28px;
+        font-size: 15px;
+        margin-top: 15px;
+        margin-left: 2px;
+        position: absolute;
+        top: 559px;
+        right: 239px;
+    }
+    #data {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 400px;
+        margin-left: 0px;
+    }
+    #startyear {
+      
+        margin-right: 30px;
+    }
+    #endyear {
+        
+        margin-right: 30px;
+    }
+
+}
