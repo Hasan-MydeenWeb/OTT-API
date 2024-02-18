@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link class="fav-logo" rel="shortcut icon" href="./images/netflexlogo.png"  type="image/x-icon">
+    <title>Movies and OTT-Details API Web Page using javscript</title>
+</head>
+<body>
+
+
+    <section id="maindesine">
+     <div class="navebar">
+        <div class="maindiv">
+            <div class="subdivone">
+                <img src="./images/netflexlogo.png" width="10%" alt="netflex logo">
+    
+            </div>
+            <div class="sundivtwo">
+
+                <button>SineIn</button>
+    
+            </div>
+        </div>
+
+     </div>   
+   
+        <div class="maindesine1">
+            <h1 class="txtstyle">Streaming <span>Availability</span></h1>
+            <p class="pstyle">Get Streaming details of Movie and TV Shows from 150+ Streaming platforms</p>
+
+            
+          <div class="inputstl">
+            <h1 id="jsonoutput"></h1>
+            <!-- <input id="inputtype" type="text"> -->
+            <input type="number" placeholder="Enter your starting movie year" id="startyear">
+            <input type="number" placeholder="Enter your starting movie year" id="endyear">
+
+            <button class="btn">Search</button>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="gridlayout">
+            <div id="data">
+        
+            </div>
+        </div>
+
+
+
+
+       
+       
+
+    </section>
+
+
+
+
+
+
+
+
+
+ 
+
+
+    <script>
+        let jsonoutput = document.querySelector("#jsonoutput");
+        let input = document. querySelector("#inpttype");
+        let data = document. querySelector("#data");
+        let startyear = document. querySelector("#startyear");
+        let endyear = document. querySelector("#endyear");
+        let btn = document.querySelector(".btn");
+        // btn.addEventListener("click",()=>{
+        //     fetch("https://rapidapi-example-streaming-app.vercel.app/api/search?title=transformer")
+        //     .then((res)=>res.json())
+        //     .then((output)=>{
+        //         console.log(output);
+
+        //         let newdiv = document.createElement("div")
+        //         data.appendChild(newdiv);
+
+        //         output.result.map((dd)=>{
+        //             let img = document.createElement("img");
+
+        //             img.src=  dd.imageurl  
+        //         })
+        //     })
+        // })
+
+
+        btn.addEventListener("click", function testingprogram(){
+            const url = 'https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startyear.value+'&end_year='+endyear.value+'&min_imdb=6&max_imdb=7.8&genre=action&language=english&type=movie&sort=latest&page=1';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'bafe053193msh080c750e26952e2p13a35bjsnbe0d0476d648',
+		'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+	}
+};
+
+
+	 fetch(url, options).then((res)=>res.json())
+     .then((output)=>{
+        console.log(output.results);
+
+        output?.results.map((dd)=>{
+            let newdiv = document.createElement("div");
+            newdiv.classList.add("subdivs")
+            data.appendChild(newdiv)
+            let image = document.createElement("img")
+
+            // let ptag = document.createElement("p")
+            // ptag.innerHTML="NODATA";
+            let ptag = document.createElement("img")
+            ptag.src="./images/replaseimg.jpg";
+
+            image.src= dd.imageurl?.[0];
+            {
+                dd.imageurl?.[0] == undefined ? newdiv.appendChild(ptag) :  newdiv.appendChild(image)
+            }
+           
+           
+
+            let h1tag =document.createElement("h1");
+            h1tag.innerHTML = dd.title;
+            newdiv.appendChild(h1tag)
+
+
+
+            let paratag= document.createElement("p");
+            paratag.innerHTML = dd.imdbrating;
+            newdiv.appendChild(paratag)
+
+
+
+            
+            let relistag = document.createElement("p");
+            relistag.innerHTML = dd.released;
+            newdiv.appendChild(relistag)
+
+
+
+            let synpsdata = document.createElement("p");
+            synpsdata.innerHTML= dd.synopsis;
+            newdiv.appendChild(synpsdata)
+
+
+            console.log(dd.imageurl?.[0]);
+        })
+
+     })
+	
+    // console.log(result);
+	// console.log(JSON.stringify(result));
+
+    // result.map("")
+
+
+        })
+       
+
+
+
+
+
+       
+    </script>
+</body>
+</html>
