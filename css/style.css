@@ -9,7 +9,7 @@ width: 80%;
 margin: auto;    
 }
 #maindesine{
-    background-image: url(/asserts/images/netflix-img.jpg);
+    background-image: url(../images/netflix-img.jpg);
     height: 100vh;
     background-position: center;
     background-size: cover;
